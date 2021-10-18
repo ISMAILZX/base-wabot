@@ -34,6 +34,8 @@ Edit the required value in `config.json`.
 
 # Features
 If I'm not lazy, I'll add the features later.
-> sticker
+```cmd
 > play
+> sticker
+```
 
