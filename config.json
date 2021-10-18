@@ -1,4 +1,8 @@
 {
   "prefix": "!",
-  "ownerNumber": ["628@s.whatsapp.net", "628@s.whatsapp.net"]
+  "ownerNumber": ["628@s.whatsapp.net", "628@s.whatsapp.net"],
+  "msg": {
+    "wait": "`_Tunggu sebentar sedang diprosess..._",
+    "error": "_*[❗] Terjadi kesalahan mungkin disebabkan oleh system*_",
+  }
 }
