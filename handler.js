@@ -65,7 +65,19 @@ module.exports = client = async (client, m) => {
 	    	} catch(e) {
 		 _err(e)
 		}
-	break		  
+	break	
+	case 'tiktok':
+		if (!query) return m.reply(`Use ${config.prefix}tiktok <link> contoh ${config.prefix}tiktok https://vm.tiktok.com/ZSJcLPNpe`)
+		    axios.get('https://tyz-api.herokuapp.com/downloader/tiktok?link='+query).then(res => {
+			cmd.sendFile(m.chat, res.data.thumbnail, 'tiktok.jpg', `ID: ${res.data.id}\n${desctription}`, m)
+			    cmd.sendFile(m.chat, res.data.nowatermark, 'tiktok.mp4', '', m)
+		    })
+	case 'soundcloud':
+		m.reply(config.msg.wait)
+		    axios.get('https://tyz-api.herokuapp.com/downloader/scdl?link='+query).then(res => {
+			cmd.sendFile(m.chat, res.data.link, 'audio.mp3', '', m)
+		    })
+	break
     	case 'eval':
 	    if (!isOwner) return
 		 let _syntax = ''
