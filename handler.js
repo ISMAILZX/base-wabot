@@ -78,7 +78,6 @@ module.exports = client = async (client, m) => {
 			    const res_tiktok = await axios.get('https://tyz-api.herokuapp.com/downloader/tiktok?link='+query)
 			    client.sendFile(m.chat, res_tiktok.data.metaData.nowatermark, 'tiktok.mp4', 'Sukses', m)
 			    client.sendFile(m.chat, res_tiktok.data.metaData.audio, 'tiktok.mp3', '', m)
-			    })
 		    }
 		break
 	   case 'soundcloud':
