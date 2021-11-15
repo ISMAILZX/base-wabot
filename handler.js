@@ -11,6 +11,7 @@ const fetch = require('node-fetch')
 const fetch = require('node-fetch')
 const chalk = require('chalk')
 const config = require('./config.json')
+const { menu } = require('./lib/menu')
 let { yta, ytv } = require('../lib/scrape/y2mate');
 
 module.exports = client = async (client, m) => {
@@ -32,7 +33,10 @@ module.exports = client = async (client, m) => {
     	if (isCmd) {console.log(chalk.green('[ USE COMMAND ] '), chalk.cyan(command))}
 
     switch(command) {
-	    case 'asw':
+	    case 'menu':
+	    case 'help':
+		    m.reply(menu())
+		 break
             case 'sticker':
 	    case 'stiker':
 	    case 's':
@@ -108,11 +112,11 @@ module.exports = client = async (client, m) => {
 			    m.reply(res_artinama.data)
 		    }
 		break
-		case 'milf':
-		case 'waifu':
-		case 'husbu':
-		case 'loli':
-		case 'cosplay':
+	    case 'milf':
+	    case 'waifu':
+	    case 'husbu':
+	    case 'loli':
+	    case 'cosplay':
 		    {
 			    client.sendFile(m.chat, 'https://tyz-api.herokuapp.com/randomimg/'+command, 'image.jpeg', '', m)
 		    }
